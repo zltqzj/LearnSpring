@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class GirlController {
@@ -66,8 +68,8 @@ public class GirlController {
 
     @GetMapping(value = "/girls/{id}")
     public Girl girlFindOne(@PathVariable("id") Integer id){
-       // return girlRepository.findById(id).get();
-        return  null;
+        return girlRepository.findById(id).get();
+        //return  null;
     }
 
 
@@ -77,4 +79,18 @@ public class GirlController {
         return girlRepository.findByAge( age );
 
     }
+
+    @GetMapping(value = "/girls/age/{age1}")
+    public  String girlListByAge1(HttpServletRequest httpServerletRequest){
+        Map<String, String[]> param = httpServerletRequest.getParameterMap();
+        String[] key =   param.get( "key" );
+        System.out.println( "-------" );
+
+        System.out.println( key.length );
+        System.out.println( key[0] );
+
+        return "ok";
+
+    }
+
 }
