@@ -36,7 +36,4 @@ public class HelloController {
     public  String say1(){
         return  girlProperties.getCupSize();
     }
-
-
-
 }
