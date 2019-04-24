@@ -17,7 +17,7 @@ public class HelloController {
     @GetMapping(value = "/hello1")
     public  String hello(){
         return "hello";
-        //   return  girlProperties.getCupSize();
+        //   http://123.57.248.43:9999/hello/hello1
     }
    // @RequestMapping(value = "/say",method = RequestMethod.GET)
     @GetMapping(value = "/say")
