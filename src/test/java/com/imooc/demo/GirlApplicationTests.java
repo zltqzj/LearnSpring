@@ -1,31 +1,16 @@
 package com.imooc.demo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.imooc.demo.controller.GirlController;
-import com.imooc.demo.domain.Girl;
-import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.hasValue;
@@ -38,22 +23,18 @@ public class GirlApplicationTests {
     private MockMvc mockMvc;
 
 
-    private GirlController girlController;
 
     MockHttpServletRequest mockHttpServletRequest;
 
 
     private ObjectMapper mapper = new ObjectMapper();
 
-    @Resource(name = "jdbcTemplate")
-    private JdbcTemplate jdbcTemplate;
+
 
 
     @Before
     public void setUp() throws Exception {
-        girlController = new GirlController();
-        mockMvc = MockMvcBuilders.standaloneSetup(girlController).build();
-        mockHttpServletRequest = new MockHttpServletRequest();
+
     }
 
 
@@ -62,8 +43,7 @@ public class GirlApplicationTests {
         mockHttpServletRequest = new MockHttpServletRequest();
         mockHttpServletRequest.addParameter("key","value");
 
-        String result = girlController.girlListByAge1( mockHttpServletRequest );
-        System.out.println( result );
+
 
 
         /*

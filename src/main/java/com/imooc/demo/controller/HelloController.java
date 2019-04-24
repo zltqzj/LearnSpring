@@ -14,19 +14,11 @@ public class HelloController {
     private GirlProperties girlProperties;
 
 
-
-//    @Value("${cupSize}")
-//    private  String cupSize;
-//
-//    @Value("${age}")
-//    private  Integer age;
-//
-//    @Value("${content}")
-//    private  String content;
-
-
-
-
+    @GetMapping(value = "/hello1")
+    public  String hello(){
+        return "hello";
+        //   return  girlProperties.getCupSize();
+    }
    // @RequestMapping(value = "/say",method = RequestMethod.GET)
     @GetMapping(value = "/say")
     public  String say3(@RequestParam("id") Integer myId){
