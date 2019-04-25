@@ -3,7 +3,7 @@ package com.imooc.demo.service;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestClassDemo {
+public class TestNgClassDemoTest {
 
     @Test
     public void testcase2(){
