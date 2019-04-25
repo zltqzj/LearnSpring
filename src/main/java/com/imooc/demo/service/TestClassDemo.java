@@ -1,4 +1,4 @@
-package com.imooc.demo;
+package com.imooc.demo.service;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
