@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestClassDemo {
-    
+
     @Test
     public void testcase2(){
         Assert.assertTrue(true);
